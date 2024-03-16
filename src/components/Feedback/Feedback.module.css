@@ -1,0 +1,8 @@
+ul {
+  list-style: none;
+  font-size: 36px;
+  color: black;
+}
+.feedbackList > .feedbackListItem:nth-last-child(-n + 1) {
+  color: orange;
+}

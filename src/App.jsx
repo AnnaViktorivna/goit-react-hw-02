@@ -1,36 +1,25 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import Description from "./components/Description/Description";
 import Options from "./components/Options/Options";
 import Feedback from "./components/Feedback/Feedback";
 
 function App() {
-  // const [count, setCount] = useState(0);
-  // const handleClick = (e) => {
-  //   console.log(new Date().toLocaleDateString());
-  // };
-  // const handleLogClick = (myNumber) => {
-  //   console.log("myNumber: ", myNumber);
-  // };
+  const [feedback, setFeedback] = useState({ good: 0, neutral: 0, bad: 0 });
+
+  const handleLogOptions = (options) => {
+    console.log("options: ", options);
+    setFeedback({ ...feedback, [options]: feedback[options] + 1 });
+  };
+
+  const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
+
   return (
     <>
       <Description />
-      <Options />
-      <Feedback />
+      <Options handleLogOptions={handleLogOptions} />
+      <Feedback feedback={feedback} totalFeedback={totalFeedback} />
     </>
-
-    // <>
-    //   <button onClick={handleClick}>Click Me</button>
-    //   <button
-    //     onClick={() => {
-    //       handleLogClick(1);
-    //     }}
-    //   >
-    //     Click to log my number: 1
-    //   </button>
-    // </>
   );
 }
 
