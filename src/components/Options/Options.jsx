@@ -1,6 +1,6 @@
 import css from "./Options.module.css";
 
-const Options = ({ handleLogOptions }) => {
+const Options = ({ totalFeedback, handleResetFeedback, handleLogOptions }) => {
   return (
     <div>
       <button
@@ -24,6 +24,9 @@ const Options = ({ handleLogOptions }) => {
       >
         Bad 👎{" "}
       </button>
+      {totalFeedback !== 0 && (
+        <button onClick={handleResetFeedback}>Reset 🔄 </button>
+      )}
     </div>
   );
 };

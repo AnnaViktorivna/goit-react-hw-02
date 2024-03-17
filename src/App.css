@@ -4,6 +4,10 @@
   padding: 2rem;
   text-align: center;
 }
+p {
+  font-size: 36px;
+  color: darkmagenta;
+}
 
 .logo {
   height: 6em;

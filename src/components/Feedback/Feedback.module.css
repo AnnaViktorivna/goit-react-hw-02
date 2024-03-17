@@ -3,6 +3,6 @@ ul {
   font-size: 36px;
   color: black;
 }
-.feedbackList > .feedbackListItem:nth-last-child(-n + 1) {
+.feedbackList > .feedbackListItem:nth-last-child(-n + 2) {
   color: orange;
 }
